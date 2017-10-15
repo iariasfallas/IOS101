@@ -17,10 +17,23 @@ namespace TipCalculator
             set;
         }
 
+
+        /// <summary>
+        /// Instanciamos una nueva ventana del tamaño de la pantalla
+        /// Asignamos el controlador raíz.
+        /// Definimos la ventana como la ventana principal.
+        /// </summary>
+        /// <param name="application"></param>
+        /// <param name="launchOptions"></param>
+        /// <returns></returns>
         public override bool FinishedLaunching(UIApplication application, NSDictionary launchOptions)
         {
-            // Override point for customization after application launch.
-            // If not required for your application you can safely delete this method
+            Window = new UIWindow(UIScreen.MainScreen.Bounds)
+            {
+                RootViewController = new MyViewController()
+            };
+
+            Window.MakeKeyAndVisible();
 
             return true;
         }
